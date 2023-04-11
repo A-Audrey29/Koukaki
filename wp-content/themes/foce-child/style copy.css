@@ -871,9 +871,10 @@ textarea {
 }
 
 .story #place > div::after {
-	content: url("./assets/images/little_cloud.png");
+	content: url("./");
 	position: absolute;
 	left: calc(50% + 414px);
+	top: 2em;
 }
 
 .story #place > div p {

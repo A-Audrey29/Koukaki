@@ -7,3 +7,19 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+
+
+@keyframes goUp {
+    from{
+        transform : translateY(200px);
+    }
+    top{
+        transform: translateY(0);
+    }
+}
+
+
+.h2 {
+    background-color: brown;
+    /* animation: goUp 2s; */
+}
