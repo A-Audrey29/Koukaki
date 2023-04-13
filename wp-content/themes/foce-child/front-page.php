@@ -67,7 +67,8 @@ get_header();
     </section>
 </main><!-- #main -->
 
-<?php get_template_part('nomination');?>
+<?php get_template_part('template-parts/content', 'slider'); ?>
+<?php get_template_part('template-parts/content', 'nomination'); ?>
 
 <script src="./sript.js"></script> // branchement du fichier JS
 

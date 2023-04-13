@@ -420,35 +420,7 @@ h2 {
 	margin: 0;
 	background-position: center;
 	text-align: center;
-	/* animation: goUp 2s; */
 }
-
-@keyframes goUp {
-    from{
-        transform : translateY(300px);
-		opacity: 0;
-    }
-    to{
-        transform: translateY(0);
-		opacity: 1;
-    }
-}
-
-@keyframes goDown {
-    from{
-        transform : translateY(-300px);
-		opacity: 0;
-    }
-    to{
-        transform: translateY(0);
-		opacity: 1;
-    }
-}
-
-*:not(p) {
-	animation: goUp 2s;
-}
-
 
 h3 {
 	color: #FFF5E9;
@@ -758,13 +730,11 @@ textarea {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* animation: goDown 2s; */
 }
 
 .banner img {
 	margin-top: -10%;
 	width: 50%;
-	/* animation: goUp 2s; */
 }
 
 .story {
@@ -772,7 +742,6 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	animation: goUp 2s;
 }
 
 .story h2::before {
@@ -781,8 +750,6 @@ textarea {
 	left: 0;
 	top: 1.8em;
 	z-index: -1;
-	/* animation: goUp 2s; */
-
 }
 
 .story h2::after {
@@ -790,7 +757,6 @@ textarea {
 	position: absolute;
 	left: 0.7em;
 	top: 6em;
-	animation: rotate(1turn)infinite; 
 }
 
 .story__article {
@@ -810,7 +776,6 @@ textarea {
 	left: 50%;
 	top: 8em;
 	z-index: -1;
-	/* animation: goUp 2s; */
 }
 
 .story__article::after {
@@ -818,14 +783,12 @@ textarea {
 	position: absolute;
 	left: calc(50% + 414px);
 	top: 2em;
-	/* animation: goUp 2s; */
 }
 
 .story #characters {
 	margin: 6em;
 	display: flex;
 	text-align: center;
-	/* animation: goUp 2s; */
 }
 
 .story #characters h3 {
@@ -853,7 +816,6 @@ textarea {
 	width: 100%;
 	min-height: 699px;
 	background-size: cover;
-	/* animation: goUp 2s; */
 }
 
 .story #place h3 {
@@ -910,13 +872,12 @@ textarea {
 	width: 66.66%;
 	margin: auto;
 }
-/* feuillage central studio Koukaki */
+
 #studio > div::before { 
 	content: url("./assets/images/trple-leaf.png");
 	position: absolute;
 	left: calc(50% - 17.225px);
 	top: 40%;
-	animation: goUp 2s;
 }
 
 #studio > div p {
@@ -1327,7 +1288,3 @@ textarea {
 }
 
 /*# sourceMappingURL=style.css.map */
-
-.site-footer::after, .site-footer ul::after, .site-footer::before, .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
-	transform: rotate(1turn)infinite;
-}

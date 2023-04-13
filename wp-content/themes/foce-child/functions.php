@@ -8,8 +8,6 @@ function theme_enqueue_styles()
     wp_enqueue_style('child-script', get_stylesheet_directory_uri() . '/script.js'); // branchement du fichier JS enfant
 }
 
-
-
 // Get customizer options form parent theme
 if (get_stylesheet() !== get_template()) {
     add_filter('pre_update_option_theme_mods_' . get_stylesheet(), function ($value, $old_value) {

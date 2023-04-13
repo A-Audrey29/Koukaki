@@ -9,17 +9,46 @@
  */
 
 
-@keyframes goUp {
+ @keyframes goUp {
     from{
-        transform : translateY(200px);
+        transform : translateY(300px);
+		opacity: 0;
     }
-    top{
+    to{
         transform: translateY(0);
+		opacity: 1;
     }
 }
 
+@keyframes goDown {
+    from{
+        transform : translateY(-100px);
+		opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+		opacity: 1;
+    }
+}
 
-.h2 {
-    background-color: brown;
-    /* animation: goUp 2s; */
+@keyframes rotateFlowers {
+    from{
+        transform : rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+.banner{
+    animation: goDown 2s;
+}
+
+.banner img, h2, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
+	animation: goUp 2s;
+}
+
+/*rotation des fleures*/
+.site-footer::after, .site-footer ul::after, .site-footer::before, .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
+    animation: rotateFlowers 4s infinite linear;    
 }
