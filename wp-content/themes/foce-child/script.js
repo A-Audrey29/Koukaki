@@ -20,3 +20,24 @@
       slideShadows: true,
     },
   });
+
+const title = document.querySelectorAll(h2)
+
+title.addEventListener('Scroll', () => {
+
+
+    // controller de la visibilité 
+    const positionElement = element.offsetTop;
+    const hauteurElement = element.offsetHeight;
+    const positionScroll = window.scrollTop || window.pageYOffset;
+
+if (positionScroll > positionElement - window.innerHeight && positionScroll < positionElement + hauteurElement) {
+  // Votre code ici
+}       
+})
+
+console.log("hello");
+
+//   const position = element.getBoundingClientRect().top
+//    window.innerHeight
+//    translateX(3OOpx)

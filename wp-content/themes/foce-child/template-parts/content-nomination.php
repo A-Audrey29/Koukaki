@@ -15,5 +15,5 @@
     <p class="nomination_text">
         Fleurs d'oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !
     </p>
-    <img src="wp-content/themes/foce-child/assets/18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1.png" alt="logo de Oscars Short Film Animated" />
+    <img class="nomination_img" src="wp-content/themes/foce-child/assets/18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1.png" alt="logo de Oscars Short Film Animated" />
 </section>
