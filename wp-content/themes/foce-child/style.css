@@ -1,4 +1,4 @@
-/*
+/* /* 
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
  Author: Studio Koukaki
@@ -40,6 +40,11 @@
     }
 }
 
+/* ne fonctionne pas */
+/* *:not(.story #place > div p){
+    animation: none;
+} */
+
 .banner{
     animation: goDown 2s;
 }
@@ -52,3 +57,55 @@
 .site-footer::after, .site-footer ul::after, .site-footer::before, .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
     animation: rotateFlowers 4s infinite linear;    
 }
+
+/* section place */
+.story #place {
+	background-image: url("./assets/Studio_Koukaki-image_place.png");
+}
+
+/* ajout du gros nuage */
+.story #place::after {
+	content: url("./assets/big_cloud.png");
+    position: absolute;
+	left: calc(52% + 223px);
+    filter: drop-shadow(0px 0px 20px #C0F7FF);
+}
+
+/* modification petit nuage */
+.story #place > div::after {
+	left: calc(59% + 413px);
+    filter: drop-shadow(0px 0px 20px #C0F7FF);
+}
+
+.nomination_text::before{
+    background-image: url("./assets/orange_place_bg.png");
+    background-color: aqua;
+}
+
+/* carrousel*/
+
+  html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+</style>
+</head>
