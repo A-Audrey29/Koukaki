@@ -1,12 +1,29 @@
-//   // import Swiper JS
-//   import Swiper from 'swiper';
-//   // import Swiper styles
-//   import 'swiper/css';
+// décalage des nuages aux sroll
+const bigCloud = document.getElementById("big_cloud")
 
-//   const swiper = new Swiper();
+window.addEventListener('scroll', () => {
+    let decalage = window.scrollY /10
+        bigCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
+})
+
+const littleCloud = document.getElementById("little_cloud")
+
+window.addEventListener('scroll', () => {
+    let decalage = window.scrollY /10
+    littleCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
+})
+
+
+
+// apparition des titres au scroll 
+const title = document.querySelectorAll(h2)
+
+title.addEventListener('scroll', () => {
+    let decalage = window.scrollY /10
+    title.style.transform = 'translateY(' + (decalage + 20) + 'px)'
+})
 
 // Carrousel
-
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -21,23 +38,4 @@
     },
   });
 
-const title = document.querySelectorAll(h2)
-
-title.addEventListener('Scroll', () => {
-
-
-    // controller de la visibilité 
-    const positionElement = element.offsetTop;
-    const hauteurElement = element.offsetHeight;
-    const positionScroll = window.scrollTop || window.pageYOffset;
-
-if (positionScroll > positionElement - window.innerHeight && positionScroll < positionElement + hauteurElement) {
-  // Votre code ici
-}       
-})
-
-console.log("hello");
-
-//   const position = element.getBoundingClientRect().top
-//    window.innerHeight
-//    translateX(3OOpx)
+  console.log('hello');

@@ -8,7 +8,7 @@ get_header();
         <video id="background-video" autoplay loop muted poster="wp-content/themes/foce-child/assets/Studio Koukaki-image header 1.png">
             <source src="wp-content/themes/foce-child/assets/Studio+Koukaki-vidéo+header+sans+son+(1).mp4" type="video/mp4">
         </video>
-        <img class="banner img" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+        <img class="banner img" src="<?php echo get_template_directory_uri() . "'/assets/images/logo.png'"; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
     <section id="#story" class="story">
         <h2>L'histoire</h2>
@@ -52,8 +52,7 @@ get_header();
                 //         the_title();
                 //         echo '</figcaption>';
                 //         echo '</figure>';
-                //     }
-                //     
+                //     }   
                 ?>
             </div>
         </article>
@@ -62,6 +61,8 @@ get_header();
                 <h3>Le Lieu</h3>
                 <p class="place_text"><?php echo get_theme_mod('place'); ?></p>
             </div>
+            <img id="big_cloud" src="wp-content/themes/foce-child/assets/big_cloud.png" alt="#" />
+            <img id="little_cloud" src="wp-content/themes/foce-child/assets/little_cloud.png" alt="#" />
         </article>
     </section>
 
@@ -78,10 +79,11 @@ get_header();
 <!-- ajout de la section nomination templates-parts -->
 <?php get_template_part('template-parts/content', 'nomination'); ?>
 
-<!-- branchement du fichier JS -->
-<script src="./script.js"></script>
 <!-- branchement du fichier swiper.js -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!-- branchement du fichier JS -->
+<script src="wp-content/themes/foce-child/script.js"></script>
+
 
 <?php
 get_footer();

@@ -832,11 +832,11 @@ textarea {
 	margin-left: 6em;
 }
 
-.story #place > div::after {
+/* .story #place > div::after {
 	content: url("./assets/images/little_cloud.png");
 	position: absolute;
 	left: calc(50% + 414px);
-}
+} */
 
 .story #place > div::before {
 	content: url("wp-content/themes/foce-child/assets/big_cloud.png");
@@ -1030,9 +1030,9 @@ textarea {
 }
 
 @media screen and (min-width: 700px) {
-	.menu-toggle {
+	/* .menu-toggle {
 		display: none;
-	}
+	} */
 	.main-navigation {
 		height: 80px;
 	}

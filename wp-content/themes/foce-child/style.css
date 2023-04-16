@@ -9,6 +9,28 @@
  */
 
 
+/* menu */
+
+/* .site-header {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: #e8e8e8;
+    padding-top: 60px;
+    transition: center 0.5s ease;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  } */
+
  @keyframes goUp {
     from{
         transform : translateY(300px);
@@ -54,23 +76,10 @@
 
 .banner img{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background-image: url("wp-content/themes/foce-child/assets/LOGO.png");
-    background-size: cover;
-    transform: translateZ(-1px) scale(2);
 }
-
 .background-video{
-    position: relative;
-    z-index: 1;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-image: url("wp-content/themes/foce-child/assets/Studio Koukaki-image header 1.png");
 }
     
 
@@ -82,6 +91,29 @@
 .site-footer::after, .site-footer ul::after, .site-footer::before, .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
     animation: rotateFlowers 4s infinite linear;    
 }
+
+/* effet de flottement des titres */
+h2, h3 {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-15px, 11px);
+    }
+    50%{
+        transform: translate(0, 15px);
+    }
+    75%{
+        transform: translate(15px, 10px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
 
 /* carrousel*/
 html,
@@ -114,32 +146,43 @@ body {
 }
 
 /* ajout du gros nuage */
-.story #place::after {
-	content: url("./assets/big_cloud.png");
+#big_cloud {
     position: absolute;
-	left: calc(52% + 223px);
+    top: 1300px;
+	left: calc(52% + 210px);
     filter: drop-shadow(0px 0px 20px #C0F7FF);
 }
 
-/* modification petit nuage */
-.story #place > div::after {
-	left: calc(59% + 413px);
+/* ajout du petit nuage */
+#little_cloud {
+    position: absolute;
+    top: 1457px;
+	left: calc(65% + 320px);
     filter: drop-shadow(0px 0px 20px #C0F7FF);
 }
 
 /* section nomination */
-#nomination {
+.nomination_container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    
 }
 
 .nomination_text{
-    font-family: Quicksand;
+    font-family: "Quicksand";
     font-size: 42px;
-    max-width: 58%;
-    background-image: url("wp-content/themes/fowp-content/themes/foce-child/assets/orange_place_bg.pngce-child/assets/orange_place_bg.png"); 
+    max-width: 643px;
+    background-image: url("wp-content/themes/fowp-content/themes/foce-child/assets/orange_place_bg.png"); 
 }
 
 .nomination_img{
-
 }
+
+
+  
+  
+  
+  
+  
+  
