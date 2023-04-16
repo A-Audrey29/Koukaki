@@ -1,27 +1,19 @@
-// décalage des nuages aux sroll
+
+// décalage des nuages aux sroll - à factoriser
 const bigCloud = document.getElementById("big_cloud")
+const littleCloud = document.getElementById("little_cloud")
 
 window.addEventListener('scroll', () => {
     let decalage = window.scrollY /10
-        bigCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
+        bigCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)';
 })
-
-const littleCloud = document.getElementById("little_cloud")
 
 window.addEventListener('scroll', () => {
     let decalage = window.scrollY /10
     littleCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
 })
 
-
-
-// apparition des titres au scroll 
-const title = document.querySelectorAll(h2)
-
-title.addEventListener('scroll', () => {
-    let decalage = window.scrollY /10
-    title.style.transform = 'translateY(' + (decalage + 20) + 'px)'
-})
+// apparition des titres au scroll
 
 // Carrousel
   var swiper = new Swiper(".mySwiper", {
@@ -38,4 +30,21 @@ title.addEventListener('scroll', () => {
     },
   });
 
-  console.log('hello');
+// const title = document.querySelectorAll(h2)
+
+// title.addEventListener('scroll', () => {
+
+
+//     // controller de la visibilité 
+//     const positionElement = element.offsetTop;
+//     const hauteurElement = element.offsetHeight;
+//     const positionScroll = window.scrollTop || window.pageYOffset;
+
+// if (positionScroll > positionElement - window.innerHeight && positionScroll < positionElement + hauteurElement) {
+//   // Votre code ici
+// }       
+// })
+
+//   const position = element.getBoundingClientRect().top
+//    window.innerHeight
+//    translateX(3OOpx)
