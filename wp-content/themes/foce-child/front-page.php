@@ -10,9 +10,9 @@ get_header();
         </video>
         <img class="banner img" src="<?php echo get_template_directory_uri() . "'/assets/images/logo.png'"; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
-    <section id="#story" class="story">
+    <section id="#story" class="story object-speed-up">
         <h2>L'histoire</h2>
-        <article id="" class="story__article">
+        <article id="" class="story__article object-speed-up">
             <p><?php echo get_theme_mod('story'); ?></p>
         </article>
         <?php
@@ -59,7 +59,7 @@ get_header();
         <article id="place">
             <div>
                 <h3>Le Lieu</h3>
-                <p class="place_text"><?php echo get_theme_mod('place'); ?></p>
+                <p><?php echo get_theme_mod('place'); ?></p>
             </div>
             <img id="big_cloud" src="wp-content/themes/foce-child/assets/big_cloud.png" alt="#" />
             <img id="little_cloud" src="wp-content/themes/foce-child/assets/little_cloud.png" alt="#" />
@@ -67,12 +67,15 @@ get_header();
     </section>
 
 
-    <section id="studio">
+    <section id="studio" class="object-speed-up">
         <h2>Studio Koukaki</h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
         </div>
+        <img class="studio_white_flower object-speed-up" src="wp-content/themes/foce-child/assets/Sunflower.png" alt="#""/>
+        <img class=" studio_orchid object-speed-up" src="wp-content/themes/foce-child/assets/orchid.png" alt="#""/>
+                    
     </section>
 </main><!-- #main -->
 
@@ -80,10 +83,10 @@ get_header();
 <?php get_template_part('template-parts/content', 'nomination'); ?>
 
 <!-- branchement du fichier swiper.js -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-<!-- branchement du fichier JS -->
-<script src="wp-content/themes/foce-child/script.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <!-- branchement du fichier JS -->
+        <script src="wp-content/themes/foce-child/script.js"></script>
 
 
-<?php
-get_footer();
+        <?php
+        get_footer();

@@ -10,17 +10,14 @@
 
 
 /* menu */
+ .site-header {
+    background-color: #FFD5A2; 
+    /* display: flex; */
+  } 
 
-/* .site-header {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: -250px;
-    background-color: #e8e8e8;
-    padding-top: 60px;
-    transition: center 0.5s ease;
+  .main-navigation{
+    display: flex;
+    padding-left: 50%;
   }
 
   .menu-toggle span {
@@ -29,7 +26,7 @@
     height: 5px;
     background-color: black;
     margin: 6px 0;
-  } */
+  }
 
  @keyframes goUp {
     from{
@@ -53,6 +50,11 @@
     }
 }
 
+/* effet d'apparission vers le haut */
+.banner img, h2, h3, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
+	animation: goUp 2s;
+}
+
 @keyframes rotateFlowers {
     from{
         transform : rotate(0turn);
@@ -62,38 +64,13 @@
     }
 }
 
-/* ne fonctionne pas */
-/* *:not(.story #place > div p){
-    animation: none;
-} */
-
-.banner{
-    animation: goDown 2s;   /* effet d'apparition vers le bas */
-    overflow-x: hidden;     /* effet parallax*/
-    overflow-y: auto;
-    perspective: 1px;
-}
-
-.banner img{
-    position: absolute;
-    background-image: url("wp-content/themes/foce-child/assets/LOGO.png");
-}
-.background-video{
-    background-image: url("wp-content/themes/foce-child/assets/Studio Koukaki-image header 1.png");
-}
-    
-
-.banner img, h2, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
-	animation: goUp 2s;
-}
-
 /*rotation des fleures*/
-.site-footer::after, .site-footer ul::after, .site-footer::before, .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
+.studio_orchid, .site-footer ul::after, .studio_white_flower , .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
     animation: rotateFlowers 4s infinite linear;    
 }
 
 /* effet de flottement des titres */
-h2, h3 {
+/* h2, h3 {
     animation: float 3s ease-in-out infinite;
   }
   
@@ -113,7 +90,38 @@ h2, h3 {
     100% {
       transform: translate(0);
     }
-  }
+  } */
+
+
+/* ne fonctionne pas */
+/* *:not(.story #place > div p){
+    animation: none;
+} */
+
+.banner{
+    animation: goDown 2s;   /* effet d'apparition vers le bas */
+    overflow-x: hidden;     /* effet parallax*/
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+.banner img{
+    position: absolute;
+    background-image: url("wp-content/themes/foce-child/assets/LOGO.png");
+        margin-top: -10%;
+        width: 50%;
+        height: 64%;
+}
+
+.background-video{
+    background-image: url("wp-content/themes/foce-child/assets/Studio Koukaki-image header 1.png");
+}
+
+/* characterrs */
+
+.swiper {
+    max-width: 14OOpx;
+}
 
 /* carrousel*/
 html,
@@ -163,6 +171,7 @@ body {
 
 /* section nomination */
 .nomination_container {
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,9 +186,25 @@ body {
 }
 
 .nomination_img{
+    background-color: transparent;
 }
 
+.background_orange {
+    
+}
 
+/* footer */
+.studio_white_flower {
+	position: absolute;
+	left: 6em;
+	top: 30em;
+}
+
+.studio_orchid {
+	position: absolute;
+	right: -4em;
+	bottom: -9.2em;
+}
   
   
   

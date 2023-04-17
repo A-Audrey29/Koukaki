@@ -566,19 +566,19 @@ table {
 	overflow: hidden;
 }
 
-.site-footer::before {
+/* .site-footer::before {
 	content: url("./assets/images/Sunflower.png");
 	position: absolute;
 	left: 4em;
 	top: 0em;
-}
+} */
 
-.site-footer::after {
+/* .site-footer::after {
 	content: url("./assets/images/orchid.png");
 	position: absolute;
 	right: -4em;
 	bottom: 7.8em;
-}
+} */
 
 .site-footer ul {
 	padding: 0;
@@ -725,7 +725,7 @@ textarea {
 --------------------------------------------------------------*/
 .banner {
 	background-image: url("./assets/images/banner.png");
-	min-height: 806px;
+	/* min-height: 806px; */
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -965,7 +965,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-.site-header {
+/* .site-header {
 	position: sticky;
 	top: 0;
 	z-index: 9999;
@@ -1027,7 +1027,7 @@ textarea {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-}
+} */
 
 @media screen and (min-width: 700px) {
 	/* .menu-toggle {

@@ -13,9 +13,31 @@ window.addEventListener('scroll', () => {
     littleCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
 })
 
-// apparition des titres au scroll
+// accélération des fleurs au scroll
+const objectSpeedUp = document.querySelectorAll(".object-speed-up")
 
-// Carrousel
+window.addEventListener('scroll', () => {
+    // variable initial
+    debugger
+        const rotationInital = rotate()
+        let rotationSpeed = window.scrollY /10
+        objectSpeedUp.style.transform = 'rotateFlowers(' + (rotationSpeed + 10) + 's)'  
+    })
+    
+//     let rotationSpeed = window.scrollY /10
+//     objectSpeedUp.style.transform = 'rotate (' + (rotationSpeed + 10) + 's)';
+// })
+// const elements = document.querySelectorAll('.fleur');
+// window.addEventListener('scroll', () => {
+//   const scrollPosition = window.scrollY;
+//   elements.forEach((element) => {
+//     const duration = 10 - (scrollPosition / 100);
+//     element.style.animationDuration = `${duration}s`;
+//   });
+// });
+
+
+// Carrousel swiper JS
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -48,3 +70,20 @@ window.addEventListener('scroll', () => {
 //   const position = element.getBoundingClientRect().top
 //    window.innerHeight
 //    translateX(3OOpx)
+
+// menu burger
+
+var sidenav = document.getElementById("masthead");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
+
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
+
+function openNav() {
+    sidenav.classList.add("active");
+  }
+
+  function closeNav() {
+    sidenav.classList.remove("active");
+  }
