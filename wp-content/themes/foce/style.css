@@ -1024,15 +1024,15 @@ textarea {
 }
 
 /* Small menu. */
-.menu-toggle,
+/* .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
 } */
 
-@media screen and (min-width: 700px) {
-	/* .menu-toggle {
+/* @media screen and (min-width: 700px) {
+	.menu-toggle {
 		display: none;
-	} */
+	}
 	.main-navigation {
 		height: 80px;
 	}
@@ -1044,7 +1044,7 @@ textarea {
 	.main-navigation ul .site-title {
 		display: block;
 	}
-}
+}  */
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main

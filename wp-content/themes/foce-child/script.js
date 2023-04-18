@@ -14,16 +14,59 @@ window.addEventListener('scroll', () => {
 })
 
 // accélération des fleurs au scroll
-const objectSpeedUp = document.querySelectorAll(".object-speed-up")
+// test 1
+// const objectSpeedUp = document.querySelectorAll(".object-speed-up")
+
+// let oldScroll = window.scrollY
+
+// window.addEventListener('scroll', () => {
+//     let newScroll = window.scrollY
+//     if (oldScroll < newScroll) {
+//         objectSpeedUp.forEach((element) => {
+//             element.style.animationDuration = `1s`   
+//         })   
+//      }
+//      else {
+//         objectSpeedUp.forEach((element) => {
+//             element.style.animationDuration = `4s`   
+//         })   
+//      } 
+//     oldScroll = newScroll
+
+        // .style.transform = 'rotateInitial(' + (rotationSpeed + 10) + 's)'  
+    // })
+    // function myFunction() {
+    //     var myElement = document.getElementById("myElement");
+    //     var i = 0;
+        
+    //     function myScrollFunction() {
+    //       i++;
+    //       console.log("Scrolling " + i);
+    //       if (i == 5) {
+    //         myElement.removeEventListener("scroll", myScrollFunction);
+    //         console.log("Scrolling stopped");
+    //       }
+    //     }
+      
+    //     myElement.addEventListener("scroll", myScrollFunction);
+    //   }
+   
+    //test 2
+    // const element = document.querySelector('object-speed-up');
+// window.addEventListener('scroll', function() {
+// 	const scroll = element.style.setProperty('objectSpeedUp', `${scroll}s`);
+// });
+
+//test 3
+    // const element = document.querySelector('object-speed-up');
 
 window.addEventListener('scroll', () => {
-    // variable initial
-    debugger
-        const rotationInital = rotate()
-        let rotationSpeed = window.scrollY /10
-        objectSpeedUp.style.transform = 'rotateFlowers(' + (rotationSpeed + 10) + 's)'  
-    })
+    let decalage = window.scrollY /10
+    element.style.transform = 'rotate(' + decalage + '1s)'
+})
     
+
+//test 4
 //     let rotationSpeed = window.scrollY /10
 //     objectSpeedUp.style.transform = 'rotate (' + (rotationSpeed + 10) + 's)';
 // })
@@ -73,17 +116,35 @@ window.addEventListener('scroll', () => {
 
 // menu burger
 
-var sidenav = document.getElementById("masthead");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
+// var sidenav = document.getElementById("masthead");
+// var openBtn = document.getElementById("openBtn");
+// var closeBtn = document.getElementById("closeBtn");
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+// openBtn.onclick = openNav;
+// closeBtn.onclick = closeNav;
 
-function openNav() {
-    sidenav.classList.add("active");
+// function openNav() {
+//     sidenav.classList.add("active");
+//   }
+
+//   function closeNav() {
+//     sidenav.classList.remove("active");
+//   }
+
+
+  function toggleMenu () {  
+    const navbar = document.querySelector('main-navigation');
+    const burger = document.querySelector('.burger');
+    
+    burger.addEventListener('click', (e) => {    
+      navbar.classList.toggle('open-nav');
+    });    
+    // close menu
+    const navbarLinks = document.querySelectorAll('.burger a');
+    navbarLinks.forEach(link => {
+      link.addEventListener('click', (e) => {    
+        navbar.classList.toggle('open-nav');
+      }); 
+    })  
   }
-
-  function closeNav() {
-    sidenav.classList.remove("active");
-  }
+  toggleMenu();

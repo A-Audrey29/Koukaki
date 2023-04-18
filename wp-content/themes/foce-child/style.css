@@ -10,17 +10,182 @@
 
 
 /* menu */
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
  .site-header {
-    background-color: #FFD5A2; 
-    /* display: flex; */
+    background-color: #FFF5E9; 
+    width: 100%;
+    height: 80px;
   } 
 
-  .main-navigation{
-    display: flex;
-    padding-left: 50%;
+  .site-title{
+    background-color: #FFD5A2;
+    height: 80px;
+    padding-top: 25px;
+    display: block;
+    max-width: 1440px;
+    font-family: "Quicksand";
+    font-size: 21px;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
   }
 
-  .menu-toggle span {
+.open_nav .main-navigation_links{
+    height: 1024px;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 43px;
+    /* menu fermé*/
+    height: 0;
+}
+
+.main-navigation_links{
+    padding-top: 68px;
+    position: absolute;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.main-navigation_logo{
+    width: 154px;
+    position: absolute;
+}
+
+.main-navigation_item > a{
+    text-decoration: none; 
+}
+
+.main-navigation_item {
+    padding-top: 57px;
+}
+
+.main-navigation_studio {
+    font-size: 20px;
+    text-decoration: none;
+    position: absolute;
+    top: 930px;
+}
+
+    /* ajout des fleurs et chats */
+.main-navigation_links::before{
+    content: url("./assets/orchid.png");
+    position: absolute;
+    left: -500px;
+    top: 30px;
+}
+
+.nav_story::before{
+    content: url("./assets/cat-purpul.png");
+    position: absolute;
+    max-width: 109px;
+    left: -164px;
+    top: 87px;
+}
+
+.nav_story::after{
+    content: url("./assets/Sunflower.png");
+    position: absolute;
+    right: -260px;
+    top: 50px;
+}
+
+.nav_characteres::after{
+    content: url("./assets/Random\ Flower.png");
+    position: absolute;
+    right: -455px;
+    top: 355px;
+}
+
+.nav_place::before{
+    content: url("./assets/Flower.png");
+    position: absolute;
+    left: -225px;
+    top: 425px;
+}
+
+.nav_place::after{
+    content: url("./assets/cat-grey.png");
+    position: absolute;
+    right: -251px;
+    top: 387px;
+    max-width: 123px;
+}
+
+.nav_studio::before{
+    content: url("./assets/cat-yellow.png");
+    position: absolute;
+    left: -361px;
+    top: 713px;
+}
+
+.nav_studio::after{
+    content: url("./assets/Hibiscus\ footer.png");
+    position: absolute;
+    right: -438px;
+    top: 607px;
+
+}
+/* icone burger */
+.burger {
+    display:block;
+    position: absolute;
+    left: 1000px;
+    top: 18px;
+    padding:0;
+    width:45px;
+    height:45px;
+    border:none;
+    background:transparent;
+    cursor:pointer;
+}
+
+.bar {
+    display:block;    
+    width:45px;
+    height:4px;  
+    border-radius:3px;
+    background:black; 
+    transition: all .5s ease-in-out;   
+  }
+
+.bar::before, .bar::after {
+    content:"";
+    width:45px;
+    height:4px;
+    position:absolute; 
+    left:0;  
+    background:black; 
+    border-radius:3px;    
+    transition: all .5s ease-in-out;
+  }
+.bar::before {
+    transform:translateY(-12px)
+  }
+.bar::after {
+    transform:translateY(12px)
+  }
+.open-nav .bar {
+    width:0;
+    background:transparent;    
+  }
+.open-nav .bar::before {
+    transform:rotate(45deg);
+  }
+.open-nav .bar::after {
+    transform:rotate(-45deg);
+  }  
+
+/* .menu-toggle span {
     display: block;
     width: 35px;
     height: 5px;
@@ -28,6 +193,15 @@
     margin: 6px 0;
   }
 
+.menu-toggle{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 132px;
+    top: 10px;
+} */
+
+/* effet d'apparission vers le haut */
  @keyframes goUp {
     from{
         transform : translateY(300px);
@@ -50,11 +224,11 @@
     }
 }
 
-/* effet d'apparission vers le haut */
 .banner img, h2, h3, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
 	animation: goUp 2s;
 }
 
+/*rotation des fleures*/
 @keyframes rotateFlowers {
     from{
         transform : rotate(0turn);
@@ -64,13 +238,18 @@
     }
 }
 
-/*rotation des fleures*/
-.studio_orchid, .site-footer ul::after, .studio_white_flower , .story h2::after, .story__article::after, #studio h2::before,#studio h2::after{
-    animation: rotateFlowers 4s infinite linear;    
+.studio_orchid, .site-footer ul::after, .studio_white_flower , .story h2::after, .story__article::after, #studio h2::before,#studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before {
+    animation: rotateFlowers 12s infinite linear;    
+}
+
+.objectSpeedUp {
+    transform: rotate(1turn)1s infinite;
 }
 
 /* effet de flottement des titres */
-/* h2, h3 {
+/* h2, h3, */
+.nav_story::before, .nav_place::after, .nav_studio::before
+{
     animation: float 3s ease-in-out infinite;
   }
   
@@ -90,7 +269,7 @@
     100% {
       transform: translate(0);
     }
-  } */
+  }
 
 
 /* ne fonctionne pas */

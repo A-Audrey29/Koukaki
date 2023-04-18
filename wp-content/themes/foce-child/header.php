@@ -28,25 +28,25 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'foce'); ?></a>
 
-        <header id="masthead" class="site-header">
+        <header id="masthead" class="site-header open_nav">
             <nav>
+                <a class="site-title" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
                 <div id="site-navigation" class="main-navigation">
-                    <ul>
-                        <li><a href="#story">Histoire</a></li>
-                        <li><a href="#characters">Personnages</a></li>
-                        <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
-                        <li><a href="#place">Lieu</a></li>
-                        <li><a href="#studio">Studio Koukaki</a></li>
+                    <img class="main-navigation_logo" src="wp-content/themes/foce-child/assets/LOGO.png" alt="#">
+                    <ul class="main-navigation_links">
+                        <li class="main-navigation_item nav_story"><a href=" #story">Histoire</a></li>
+                        <li class="main-navigation_item nav_characteres"><a href=" #characters">Personnages</a></li>
+                        <li class="main-navigation_item nav_place"><a href=" #place">Lieu</a></li>
+                        <li class="main-navigation_item nav_studio"><a href=" #studio">Studio Koukaki</a></li>
                     </ul>
+                    <a class="main-navigation_studio" href=" #studio">Studio Koukaki</a>
 
-                    <a id="closeBtn" href="#" class="close">×</a>
-                    <a href="#" id="openBtn">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                            <span class="line"></span>
-                            <span class="line"></span>
-                            <span class="line"></span>
-                        </button>
-                    </a>
+                    <!-- <a id="closeBtn" href="#" class="close">×</a> -->
+                    <!-- <a href="#" id="openBtn"> -->
+                    <button class="burger" aria-controls="primary-menu" aria-expanded="false">
+                        <span class="bar"></span>
+                    </button>
+                    <!-- </a> -->
                 </div>
 
             </nav><!-- #site-navigation -->
