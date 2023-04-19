@@ -133,18 +133,55 @@ window.addEventListener('scroll', () => {
 
 
   function toggleMenu () {  
-    const navbar = document.querySelector('main-navigation');
-    const burger = document.querySelector('.burger');
+    const navbar = document.querySelector('.navbar')
+    const burger = document.querySelector('.burger')
     
-    burger.addEventListener('click', (e) => {    
-      navbar.classList.toggle('open-nav');
-    });    
-    // close menu
-    const navbarLinks = document.querySelectorAll('.burger a');
-    navbarLinks.forEach(link => {
-      link.addEventListener('click', (e) => {    
-        navbar.classList.toggle('open-nav');
-      }); 
-    })  
+    burger.addEventListener('click', () => {    
+      navbar.classList.toggle('open-nav')
+    })
+
+  
+    // const navbarLinks = document.querySelectorAll('.navbar a')
+    // navbarLinks.forEach(link => {
+    //   link.addEventListener('click', () => {    
+    //     navbar.classList.toggle('open-nav')
+    //   })
+    // })  
   }
-  toggleMenu();
+  toggleMenu()
+
+
+  // apparition des titres
+
+//   // Récupère l'élément HTML correspondant au titre
+// const titre = document.querySelectorAll('h2');
+
+// // Ajoute un événement de défilement à la fenêtre du navigateur
+// window.addEventListener('scroll', () => {
+//   // Si la position verticale du scroll est supérieure à 100px
+//   if (window.scrollY > 100) {
+//     // Ajoute la classe qui fait apparaître le titre
+//     titre.classList.add('flow');
+//   } else {
+//     // Sinon, retire la classe pour masquer le titre
+//     titre.classList.remove('flow');
+//   }
+// });
+
+// Remove the transition class
+const square = document.querySelectorAll('.flow');
+square.classList.remove('flow');
+
+// Create the observer, same as before:
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      square.classList.add('flow');
+      return;
+    }
+
+    square.classList.remove('flow');
+  });
+});
+
+observer.observe(document.querySelector('.flow'));
