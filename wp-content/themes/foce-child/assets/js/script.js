@@ -60,11 +60,56 @@ window.addEventListener('scroll', () => {
 //test 3
     // const element = document.querySelector('object-speed-up');
 
-window.addEventListener('scroll', () => {
-    let decalage = window.scrollY /10
-    element.style.transform = 'rotate(' + decalage + '1s)'
-})
+// window.addEventListener('scroll', () => {
+//     document.documentElement.style.setProperty('--rotationSpeed', 2);
+    // let decalage = window.scrollY /10
+    // element.style.transform = 'rotate(' + decalage + '1s)'
+// })
     
+
+// let timer = null;
+// window.addEventListener('scroll', function() {
+//     if(timer !== null) {
+//         clearTimeout(timer);        
+//     }
+//     timer = setTimeout(function() {
+//           // do something
+//         document.documentElement.style.setProperty('--rotationSpeed', 2);
+//      }, 150);
+// }, false);
+
+/*!
+ * Run a callback function after scrolling has stopped
+ * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Function} callback The callback function to run after scrolling
+ * @param  {Integer}  refresh  How long to wait between scroll events [optional]
+ */
+function scrollStop (callback, refresh = 66) {
+
+	// Make sure a valid callback was provided
+	if (!callback || typeof callback !== 'function') return;
+
+	// Setup scrolling variable
+	let isScrolling;
+
+	// Listen for scroll events
+	window.addEventListener('scroll', function (event) {
+        document.documentElement.style.setProperty('--rotationSpeed', 2);
+
+		// Clear our timeout throughout the scroll
+		window.clearTimeout(isScrolling);
+
+		// Set a timeout to run after scrolling ends
+		isScrolling = setTimeout(callback, refresh);
+
+	}, false);
+
+}
+
+scrollStop(function () {
+    document.documentElement.style.setProperty('--rotationSpeed', 12);
+});
+
 
 //test 4
 //     let rotationSpeed = window.scrollY /10
@@ -133,8 +178,8 @@ window.addEventListener('scroll', () => {
 
 
   function toggleMenu () {  
-    const navbar = document.querySelector('.navbar')
-    const burger = document.querySelector('.burger')
+    const navbar = document.querySelector('.main-navigation')
+    const burger = document.querySelector('.menu-toggle')
     
     burger.addEventListener('click', () => {    
       navbar.classList.toggle('open-nav')
@@ -153,6 +198,29 @@ window.addEventListener('scroll', () => {
 
   // apparition des titres
 
+const ratio = .2
+const options = {
+    root : null,
+    rootMargin: '0px',
+    threshold: ratio
+}
+
+const crossing = function (entries, observer) {
+  entries.forEach(function (entry) {
+    if (entry.intersectionRatio > ratio) {
+      console.log('visible')
+      entry.target.classList.add('flow-visible')
+      observer.unobserve(entry.target)  
+    } 
+  })
+}
+
+const observer = new IntersectionObserver(crossing, options)
+document.querySelectorAll('.flow-invisible').forEach(function (r) {
+  observer.observe(r)
+})
+
+
 //   // Récupère l'élément HTML correspondant au titre
 // const titre = document.querySelectorAll('h2');
 
@@ -168,20 +236,21 @@ window.addEventListener('scroll', () => {
 //   }
 // });
 
-// Remove the transition class
-const square = document.querySelectorAll('.flow');
-square.classList.remove('flow');
 
-// Create the observer, same as before:
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      square.classList.add('flow');
-      return;
-    }
+// // Remove the transition class
+// const square = document.querySelectorAll('.flow');
+// square.classList.remove('flow');
 
-    square.classList.remove('flow');
-  });
-});
+// // Create the observer, same as before:
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       square.classList.add('flow');
+//       return;
+//     }
 
-observer.observe(document.querySelector('.flow'));
+//     square.classList.remove('flow');
+//   });
+// });
+
+// observer.observe(document.querySelector('.flow'));

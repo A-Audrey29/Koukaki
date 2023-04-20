@@ -965,7 +965,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
-/* .site-header {
+.site-header {
 	position: sticky;
 	top: 0;
 	z-index: 9999;
@@ -1004,9 +1004,9 @@ textarea {
 	padding-left: 20px;
 }
 
-.main-navigation ul .site-title {
+/* .main-navigation ul .site-title {
 	display: none;
-}
+} */
 
 .main-navigation li {
 	position: relative;
@@ -1018,16 +1018,16 @@ textarea {
 	text-decoration: none;
 }
 
-.main-navigation .site-title {
+/* .main-navigation .site-title {
 	font-family: "Quicksand", sans-serif;
 	font-size: 21.5px;
-}
+} */
 
 /* Small menu. */
-/* .menu-toggle,
+.menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-} */
+}
 
 /* @media screen and (min-width: 700px) {
 	.menu-toggle {
@@ -1044,7 +1044,7 @@ textarea {
 	.main-navigation ul .site-title {
 		display: block;
 	}
-}  */
+} */
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main

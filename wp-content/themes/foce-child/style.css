@@ -9,6 +9,10 @@
  */
 
 
+ :root {
+   --rotationSpeed : 12;
+ }
+
 /* menu */
 
 ul{
@@ -17,24 +21,23 @@ ul{
     margin: 0;
 }
 
-.site-header {
-   /* height: 1000px; */
+/* .site-header {
+   height: 1000px;
    max-width: 1440px;
-  } 
+  }  */
 
-.open_nav .navbar_links{
+/* .open_nav .navbar_links{
     height: 1024px;
-}
+} */
  div {
     width: 100%;
 }
 
 .site-title{
     background-color: #FFD5A2;
-    height: 80px;
+    max-width: 1440px;
     padding-top: 25px;
     display: block;
-    max-width: 1440px;
     font-family: "Quicksand";
     font-size: 21px;
     font-weight: 700;
@@ -42,41 +45,63 @@ ul{
     text-align: center;
   }
 
-.navbar {
-    background-color: #FFF5E9; 
-    /* height: 80px; */
+.main-navigation {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 80px;
     /* menu fermé*/
     /* height: 0; */
 }
 
-.navbar_links{
+.main-navigation ul {
+	height: 100%;
+	display: none;
+	list-style: none;
+	padding-left: 50px;
+}
+
+.main-navigation li {
+    position: relative;
+    font-size: 64px;
+-
+}
+.main-navigation > li {
+    font-family: 'Quicksand';
+    font-size: 21px;
+}
+
+/* // .open-nav = affiche par dessus le menu bonne alternative */
+.navbar-links{
+    background-color: #FFF5E9; 
     padding-top: 140px;
     position: absolute;
-    top: 60px;
+    top: 80px;
     text-align: center;
     font-size: 64px;
     font-weight: 400;
+    width: 100%;
+    z-index: 1000;
+}
+.navbar-links > li {
+    max-width: 1440px;
+    padding-top: 57px;
+}
+
+/* // le hover ne fonctionne pas c'est un click */
+.navbar-links li:hover {
+    text-shadow: 0 0 14px #FF5C00;
 }
 
 .navbar_logo{
     width: 154px;
     position: absolute;
     top: 115px;
+    z-index: 9999;
 }
 
 .navbar_item > a{
     text-decoration: none; 
-}
-
-.navbar_item {
-    padding-top: 57px;
-}
-
-.navbar_item:hover {
-    text-shadow: 0 0 14px #FF5C00;
 }
 
 .navbar_studio {
@@ -85,13 +110,21 @@ ul{
     position: absolute;
     top: 915px;
 }
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+    height: 70vh;
+
+    /* left: auto; */
+}
+
 
 /* icone burger */
-.burger {
+.menu-toggle {
     display:block;
     position: absolute;
-    left: 80%;
-    top: 50px;
+    left: 89%;
+    top: 13px;
     padding:0;
     width:45px;
     height:45px;
@@ -99,40 +132,35 @@ ul{
     background:transparent;
     cursor:pointer;
 }
-
-.bar {
-    display:block;    
-    width:45px;
-    height:4px;  
-    border-radius:3px;
-    background:black; 
-    transition: all .5s ease-in-out;   
-  }
-
-.bar::before, .bar::after {
-    content:"";
-    width:45px;
-    height:4px;
-    position:absolute; 
-    left:0;  
-    background:black; 
-    border-radius:3px;    
+   
+.main-navigation .line {
+	height: 2px;
+	background-color: #000;
+	display: block;
+	margin: auto;
+	margin-block: -2px;
+	width: 40px;
     transition: all .5s ease-in-out;
-  }
-.bar::before {
+}
+
+.main-navigation .line {
+    z-index: 9999;
+}
+
+.line_one {
     transform:translateY(-12px)
   }
-.bar::after {
+  .line_three {
     transform:translateY(12px)
   }
-.open-nav .bar {
+.open-nav .line_two {
     width:0;
     background:transparent;    
   }
-.open-nav .bar::before {
+.open-nav .line_one {
     transform:rotate(45deg);
   }
-.open-nav .bar::after {
+.open-nav .line_three {
     transform:rotate(-45deg);
   }  
 
@@ -148,51 +176,50 @@ ul{
     content: url("./assets/cat-purpul.png");
     position: absolute;
     max-width: 109px;
-    left: -164px;
-    top: 143px;
+    left: 13%;
+    top: 0;
 }
 
 .nav_story::after{
     content: url("./assets/Sunflower.png");
     position: absolute;
-    right: -260px;
-    top: 50px;
+    right: 14%;
+    top: -95px;
 }
 
 .nav_characteres::after{
     content: url("./assets/Random\ Flower.png");
     position: absolute;
-    right: -455px;
-    top: 355px;
+    right: 0;
+    top: 89px;
 }
 
 .nav_place::before{
     content: url("./assets/Flower.png");
     position: absolute;
-    left: -225px;
-    top: 453px;
+    left: 6%;
+    top: 53px;
 }
 
 .nav_place::after{
     content: url("./assets/cat-grey.png");
     position: absolute;
-    right: -251px;
-    top: 387px;
-    max-width: 123px;
+    right: 15%;
+    top: 13px;
 }
 
 .nav_studio::before{
     content: url("./assets/cat-yellow.png");
     position: absolute;
-    left: -361px;
-    top: 713px;
+    left: 4%;
+    top: 174px;
 }
 
 .nav_studio::after{
     content: url("./assets/Hibiscus\ footer.png");
     position: absolute;
-    top: 607px;
-    right: 85%;
+    top: 90px;
+    right: 0%;
 }
 
 
@@ -226,9 +253,11 @@ ul{
     }
 }
 
-.banner img, h2, h3, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
+/* .banner img, h2, h3, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
 	animation: goUp 2s;
-}
+} */
+
+
 
 /*rotation des fleures*/
 @keyframes rotateFlowers {
@@ -241,7 +270,7 @@ ul{
 }
 
 .studio_orchid, .site-footer ul::after, .studio_white_flower , .story h2::after, .story__article::after, #studio h2::before,#studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before {
-    animation: rotateFlowers 12s infinite linear;    
+    animation: rotateFlowers calc(var(--rotationSpeed) * 1s) infinite linear;    
 }
 
 .objectSpeedUp {
@@ -276,9 +305,15 @@ ul{
 
 /* effet d'apparition des titres*/
 
-.flow {
-    bottom: -50px;
-    transition: bottom 3s ease-in-out;
+.flow-invisible {
+    opacity: 0 !important;
+    transform: translateY(80px) !important;
+}
+
+.flow-visible {
+    opacity: 1 !important;
+    transform: translateY(O) !important;
+    transition: 2s !important;
 }
 
 /* ne fonctionne pas */
@@ -291,6 +326,7 @@ ul{
     overflow-x: hidden;     /* effet parallax*/
     overflow-y: auto;
     perspective: 1px;
+    margin-bottom: 117px;
 }
 
 .banner img{
@@ -360,42 +396,25 @@ ul{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 4;
+
 }
 
-.nomination_text{
+.nomination_text {
     font-family: "Quicksand";
     font-size: 42px;
-    max-width: 643px;
+    font-weight: 700;
+    height: 280px;
+    width: 723px;
     color: #FFF5E9;
-    z-index: 5;
-    
+    background-image: url("./assets/Rectangle\ 23.png");
+    background-repeat: no-repeat;
+    padding-top: 40px;
+    padding-left: 48px;
 }
-
-/* .nomination_text::after{
-    content: url("./assets/Rectangle\ 23.png");
-    position: absolute;
-    top: 88px;
-    left: 12%;
-    z-index: 0;
-} */
-
-.background_orange {
-    position: absolute;
-    top: 88px;
-    left: 12%;
-    z-index: 0;
-}
-
 
 .nomination_img{
-    background-color: transparent;
+    padding-bottom: 103px;
 }
-/* 
-.background_orange {
-    
-} */
 
 /* footer */
 .studio_white_flower {
