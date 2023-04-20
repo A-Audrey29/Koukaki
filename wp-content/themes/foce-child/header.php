@@ -36,14 +36,16 @@
                     <span class="line line_three"></span>
                 </button>
                 <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
-                <img class="navbar_logo" src="wp-content/themes/foce-child/assets/LOGO.png" alt="#">
                 <ul class="open_nav navbar-links">
+                    <img class="navbar_logo" src="wp-content/themes/foce-child/assets/LOGO.png" alt="#">
+
                     <li class="nav_story"><a href="#story">Histoire</a></li>
                     <li class="nav_characteres"><a href="#characters">Personnages</a></li>
                     <li class="nav_place"><a href="#place">Lieu</a></li>
                     <li class="nav_studio"><a href="#studio">Studio Koukaki</a></li>
+                    <p>studio koukaki</p>
                 </ul>
 
-
+                </ul>
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->

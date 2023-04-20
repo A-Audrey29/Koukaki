@@ -747,7 +747,7 @@ textarea {
 .story h2::before {
 	content: url("./assets/images/sunflower_leaves.png");
 	position: absolute;
-	left: 0;
+	left: 0em;
 	top: 1.8em;
 	z-index: -1;
 }
@@ -755,7 +755,7 @@ textarea {
 .story h2::after {
 	content: url("./assets/images/Sunflower.png");
 	position: absolute;
-	left: 0.7em;
+	left: .9em;
 	top: 6em;
 }
 
@@ -989,7 +989,7 @@ textarea {
 	background-color: #000;
 	display: block;
 	margin: auto;
-	margin-block: 2px;
+	/* margin-block: 2px; */
 	width: 20px;
 }
 

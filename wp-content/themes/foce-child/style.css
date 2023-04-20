@@ -39,10 +39,11 @@ ul{
     padding-top: 25px;
     display: block;
     font-family: "Quicksand";
-    font-size: 21px;
+    font-size: 1.3em;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
+   
   }
 
 .main-navigation {
@@ -50,8 +51,8 @@ ul{
     flex-direction: column;
     align-items: center;
     height: 80px;
-    /* menu fermé*/
-    /* height: 0; */
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .main-navigation ul {
@@ -63,9 +64,9 @@ ul{
 
 .main-navigation li {
     position: relative;
-    font-size: 64px;
--
+    font-size: 4em;
 }
+
 .main-navigation > li {
     font-family: 'Quicksand';
     font-size: 21px;
@@ -78,10 +79,12 @@ ul{
     position: absolute;
     top: 80px;
     text-align: center;
-    font-size: 64px;
     font-weight: 400;
     width: 100%;
     z-index: 1000;
+/* 
+    transition-property: opacity;
+    transition: duration 2s; */
 }
 .navbar-links > li {
     max-width: 1440px;
@@ -96,28 +99,31 @@ ul{
 .navbar_logo{
     width: 154px;
     position: absolute;
-    top: 115px;
+    top: 37px;
+    left: 45%;
     z-index: 9999;
 }
 
 .navbar_item > a{
     text-decoration: none; 
 }
-
-.navbar_studio {
-    font-size: 20px;
-    text-decoration: none;
+.main-navigation > p{
+    font-size: 12px;
     position: absolute;
-    top: 915px;
+    top: 80em;
+    z-index: 9999;
 }
+
+.nav_studio {
+    margin-bottom: 2em;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
-    height: 70vh;
-
+    height: 115vh;
     /* left: auto; */
 }
-
 
 /* icone burger */
 .menu-toggle {
@@ -139,12 +145,10 @@ ul{
 	display: block;
 	margin: auto;
 	margin-block: -2px;
-	width: 40px;
-    transition: all .5s ease-in-out;
-}
-
-.main-navigation .line {
+	width: 2.5em;
     z-index: 9999;
+    position:relative;
+    transition: all .5s ease-in-out;
 }
 
 .line_one {
@@ -222,12 +226,10 @@ ul{
     right: 0%;
 }
 
-
   @media all and (max-width: 920px) {
         .nav_studio::after{
             display: none;
         }
-    
 }
 
 /* effet d'apparission vers le haut */
@@ -253,11 +255,9 @@ ul{
     }
 }
 
-/* .banner img, h2, h3, .story h2::before, .story__article::after, .story__article::before, .story__article::after, .story #characters, .story #place, #studio > div::before {
+h2, h3, .story h2::before,.story__article::before, .story #characters, .story #place, #studio > div::before {
 	animation: goUp 2s;
-} */
-
-
+}
 
 /*rotation des fleures*/
 @keyframes rotateFlowers {
@@ -268,17 +268,17 @@ ul{
         transform: rotate(1turn);
     }
 }
-
-.studio_orchid, .site-footer ul::after, .studio_white_flower , .story h2::after, .story__article::after, #studio h2::before,#studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before {
-    animation: rotateFlowers calc(var(--rotationSpeed) * 1s) infinite linear;    
+/* effet goUp des fleurs puis leurs rotation */
+.story h2::after,.story__article::after, .studio_orchid, .site-footer ul::after, .studio_white_flower, #studio h2::before, #studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before  {
+    animation: rotateFlowers calc(var(--rotationSpeed) * 1s) infinite linear, goUp 2s ease-in-out;
 }
 
+/* class JS accélération des fleurs au scroll*/
 .objectSpeedUp {
     transform: rotate(1turn)1s infinite;
 }
 
-/* effet de flottement des titres */
-  
+ /* effet de flottementdes chats dans le menu */
 @keyframes float {
     0% {
       transform: translate(0, 0);
@@ -297,28 +297,26 @@ ul{
     }
   }
 
-  /* h2, h3, */
-.nav_story::before, .nav_place::after, .nav_studio::before
-{
+.nav_story::before, .nav_place::after, .nav_studio::before {
     animation: float 3s ease-in-out infinite;
   }
 
-/* effet d'apparition des titres*/
+  /* logo : apparition puis effet de flottement*/
+  .banner img {
+    animation: float 3s ease-in-out infinite, goUp 2s;
+  }
 
+/* effet d'apparition des titres*/
+/* 
 .flow-invisible {
-    opacity: 0 !important;
-    transform: translateY(80px) !important;
+    opacity: 0;
+    transform: translateY(80px) ;
 }
 
 .flow-visible {
-    opacity: 1 !important;
-    transform: translateY(O) !important;
-    transition: 2s !important;
-}
-
-/* ne fonctionne pas */
-/* *:not(.story #place > div p){
-    animation: none;
+    opacity: 1;
+    transform: translateY(O);
+    transition: 2s !;
 } */
 
 .banner{
@@ -327,22 +325,20 @@ ul{
     overflow-y: auto;
     perspective: 1px;
     margin-bottom: 117px;
+    height: 50em;
 }
 
-.banner img{
-    position: absolute;
-    background-image: url("wp-content/themes/foce-child/assets/LOGO.png");
-        margin-top: -10%;
-        width: 50%;
-        height: 64%;
+.banner img {
+    width: 50%;
+    height: 67%;
 }
 
 .background-video{
-    background-image: url("wp-content/themes/foce-child/assets/Studio Koukaki-image header 1.png");
+    position: relative;
+    z-index: -1;
 }
 
 /* characterrs - carrousel */
-
 .swiper {
   max-width: 100%;
   padding-top: 50px;
@@ -377,7 +373,8 @@ ul{
 /* ajout du gros nuage */
 #big_cloud {
     position: absolute;
-    top: 1300px;
+    top: 69%;
+    display: block;
 	left: calc(52% + 210px);
     filter: drop-shadow(0px 0px 20px #C0F7FF);
 }
@@ -385,10 +382,94 @@ ul{
 /* ajout du petit nuage */
 #little_cloud {
     position: absolute;
-    top: 1457px;
+    top: 77%;
 	left: calc(65% + 320px);
     filter: drop-shadow(0px 0px 20px #C0F7FF);
 }
+
+@media all and (max-width: 990px) {
+    .nomination_container{
+        flex-direction: column-reverse;
+    }
+    .nomination_img{
+        padding: 0 !important;
+    }
+}
+
+@media all and (max-width: 920px) {
+    #big_cloud {
+        display: none;
+    }
+    #little_cloud {
+        display: none;
+    }
+    .studio_orchid{
+        display: none;
+    }
+    .studio_white_flower{
+        display: none;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .nomination_text{
+        color: #404040 !important;
+        font-size: 2em;
+        background-image: none !important;
+        width: 100% !important;
+        margin-bottom: 100px !important;
+    }
+    .navbar_links::before{
+        content: url("");
+    }
+    
+    .nav_story::before{
+        content: url("");
+    }
+    
+    .nav_story::after{
+        content: url("");
+    }
+    
+    .nav_characteres::after{
+        content: url("");
+    }
+    
+    .nav_place::before{
+        content: url("");
+    }
+    
+    .nav_place::after{
+        content: url("");
+    }
+    
+    .nav_studio::before{
+        content: url("");
+    }
+    
+    .nav_studio::after{
+        content: url("");
+    }
+    .banner img {
+        width: 76%;
+        height: 42%;
+    }
+}
+
+ @media all and (max-width: 480px) {
+    .background-video {
+        display: none;
+    }
+}
+
+@media all and (min-width: 480px){
+    .banner_img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
 /* section nomination */
 .nomination_container {
