@@ -240,7 +240,7 @@ ul{
     }
 }
 
-h2, h3, .story__article::before, .story #characters, #studio > div::before {
+h2:before, h3, .story__article::before, .story #characters, #studio > h2, #studio > div::before {
 	animation: goUp 2s ease-in-out;
 }
 
@@ -258,7 +258,7 @@ h2, h3, .story__article::before, .story #characters, #studio > div::before {
     }
 }
 /* effet goUp des fleurs puis leurs rotation */
-.story h2::after,.story__article::after, .studio_orchid, .site-footer ul::after, .studio_white_flower, #studio h2::before, #studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before  {
+h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .studio_white_flower, #studio h2::before, #studio h2::after, .main-navigation_links::before, .nav_story::after, .nav_place::before  {
     animation: rotateFlowers calc(var(--rotationSpeed) * 1s) infinite linear, goUp 2s ease-in-out;
 }
 
@@ -401,11 +401,11 @@ h2:not(:before):not(:after) {
     padding-bottom: 103px;
 }
 
-/* footer */
+/* footer déplacement des fleurs */
 .studio_white_flower {
 	position: absolute;
 	left: 6em;
-	top: 30em;
+	top: 33em;
 }
 
 .studio_orchid {
@@ -414,6 +414,13 @@ h2:not(:before):not(:after) {
 	bottom: -9.2em;
 }
     
+.site-footer::before {
+	content: url("");
+}
+
+.site-footer::after {
+	content: url("");
+}
 
 
 @media all and (max-width: 990px) {

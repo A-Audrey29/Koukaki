@@ -9,7 +9,7 @@ get_header();
         </video>
         <img class="banner_img" src="<?php echo get_template_directory_uri() . "'/assets/images/logo.png'"; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
-    <section id="#story" class="story object-speed-up">
+    <section id="story" class="story object-speed-up">
         <h2 class="title">L'histoire</h2>
         <article id="" class="story__article object-speed-up ">
             <p#><?php echo get_theme_mod('story'); ?></p>
@@ -27,7 +27,7 @@ get_header();
 
         <article id="characters">
             <div class="main-character">
-                <h3 class="title1">Les personnages</h3>
+                <h3 class="title">Les personnages</h3>
 
                 <!-- ajout du slider templates-parts -->
                 <?php get_template_part('template-parts/content', 'slider'); ?>
