@@ -566,19 +566,19 @@ table {
 	overflow: hidden;
 }
 
-/* .site-footer::before {
+.site-footer::before {
 	content: url("./assets/images/Sunflower.png");
 	position: absolute;
 	left: 4em;
 	top: 0em;
-} */
+}
 
-/* .site-footer::after {
+.site-footer::after {
 	content: url("./assets/images/orchid.png");
 	position: absolute;
 	right: -4em;
 	bottom: 7.8em;
-} */
+}
 
 .site-footer ul {
 	padding: 0;
@@ -725,7 +725,7 @@ textarea {
 --------------------------------------------------------------*/
 .banner {
 	background-image: url("./assets/images/banner.png");
-	/* min-height: 806px; */
+	min-height: 806px;
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -747,7 +747,7 @@ textarea {
 .story h2::before {
 	content: url("./assets/images/sunflower_leaves.png");
 	position: absolute;
-	left: 0em;
+	left: 0;
 	top: 1.8em;
 	z-index: -1;
 }
@@ -755,7 +755,7 @@ textarea {
 .story h2::after {
 	content: url("./assets/images/Sunflower.png");
 	position: absolute;
-	left: .9em;
+	left: 0.7em;
 	top: 6em;
 }
 
@@ -832,18 +832,6 @@ textarea {
 	margin-left: 6em;
 }
 
-/* .story #place > div::after {
-	content: url("./assets/images/little_cloud.png");
-	position: absolute;
-	left: calc(50% + 414px);
-} */
-
-.story #place > div::before {
-	content: url("wp-content/themes/foce-child/assets/big_cloud.png");
-    position: absolute;
-	left: calc(50% + 500px);
-}
-
 .story #place > div p {
 	padding-left: 5em;
 }
@@ -879,7 +867,7 @@ textarea {
 	margin: auto;
 }
 
-#studio > div::before { 
+#studio > div::before {
 	content: url("./assets/images/trple-leaf.png");
 	position: absolute;
 	left: calc(50% - 17.225px);
@@ -989,7 +977,7 @@ textarea {
 	background-color: #000;
 	display: block;
 	margin: auto;
-	/* margin-block: 2px; */
+	margin-block: 2px;
 	width: 20px;
 }
 
@@ -1004,9 +992,9 @@ textarea {
 	padding-left: 20px;
 }
 
-/* .main-navigation ul .site-title {
+.main-navigation ul .site-title {
 	display: none;
-} */
+}
 
 .main-navigation li {
 	position: relative;
@@ -1018,10 +1006,10 @@ textarea {
 	text-decoration: none;
 }
 
-/* .main-navigation .site-title {
+.main-navigation .site-title {
 	font-family: "Quicksand", sans-serif;
 	font-size: 21.5px;
-} */
+}
 
 /* Small menu. */
 .menu-toggle,
@@ -1029,9 +1017,9 @@ textarea {
 	display: block;
 }
 
-/* @media screen and (min-width: 700px) {
+@media screen and (min-width: 700px) {
 	.menu-toggle {
-		display: none;
+		display: block;
 	}
 	.main-navigation {
 		height: 80px;
@@ -1044,7 +1032,7 @@ textarea {
 	.main-navigation ul .site-title {
 		display: block;
 	}
-} */
+}
 
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main

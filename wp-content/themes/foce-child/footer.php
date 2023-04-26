@@ -20,9 +20,10 @@
     </ul>
 </footer><!-- #colophon -->
 </div><!-- #page -->
-
+<!-- branchement du fichier css de la bibliothèque swiper JS -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" /> -->
 <?php wp_footer(); ?>
-
+</div>
 </body>
 
 </html>

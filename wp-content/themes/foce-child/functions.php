@@ -3,9 +3,12 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles()
 {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css'); // branchement du fichier style.css enfant
-    wp_enqueue_style('child-script', get_stylesheet_directory_uri() . '/script.js'); // branchement du fichier JS enfant
+    wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css'); // branchement du swiper
+
+    wp_enqueue_script('swiper-script', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', '', '', true); // branchement du fichier swiper
+
+    wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/assets/js/script.js', '', '', true); // branchement du fichier JS enfant
 }
 
 // Get customizer options form parent theme
