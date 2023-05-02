@@ -13,6 +13,15 @@ window.addEventListener('scroll', () => {
     littleCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
 })
 
+// parallaxe : logo descend avec le scoll
+const titre = document.querySelector('.banner_img')
+
+window.addEventListener('scroll', () => {
+  let decalage = window.scrollY /10
+      titre.style.transform = 'translateY(' + (decalage + -500) + 'px)';
+})
+
+
 // accélération des fleurs au scroll
 /*!
  * Run a callback function after scrolling has stopped
