@@ -190,20 +190,36 @@ scrollStop(function () {
 
 
 
- // création de l'observer
-let observer = new IntersectionObserver(observables => {
-  console.log(observables)
-})
+//  // création de l'observer
+// let observer = new IntersectionObserver(observables => {
+//   console.log(observables)
+// })
  
-  // récupération des titres
-  const titles = document.querySelectorAll('title')
+//   // récupération des titres
+//   const titles = document.querySelectorAll('title')
     
 
-  for(let title of titles){
-    title.classList.add('title_visible')
-    // observation des titres
-    observer.observe(title)
-  }
+//   for(let title of titles){
+//     title.classList.add('title_visible')
+//     // observation des titres
+//     observer.observe(title)
+  // }
 
-
+  document.addEventListener('DOMContentLoaded', (event) => {
+ 
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          const titres = entry.target.querySelector("h1,h2,h3");
+    
+          if (entry.isIntersecting) {
+            titres.classList.add('toAnim');
+            return; 
+          }
+    
+          titres.classList.remove('toAnim');
+        });
+      });
+    
+      observer.observe(document.querySelector('section'));
+    });
 

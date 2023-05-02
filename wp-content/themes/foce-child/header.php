@@ -36,7 +36,7 @@
                     </button>
                     <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
                     <ul class="open_nav navbar-links">
-                        <img class="navbar_logo" src="wp-content/themes/foce-child/images/assets/LOGO.png" alt="#">
+                        <img class="navbar_logo" src="wp-content/themes/foce-child/assets/images/LOGO.png" alt="#">
 
                         <li class="nav_story"><a href="#story">Histoire</a></li>
                         <li class="nav_characteres"><a href="#characters">Personnages</a></li>
