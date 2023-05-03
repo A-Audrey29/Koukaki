@@ -55,6 +55,8 @@ scrollStop(function () {
     document.documentElement.style.setProperty('--rotationSpeed', 12);
 });
 
+
+
 // Carrousel swiper JS
   var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
@@ -70,6 +72,8 @@ scrollStop(function () {
     },
   });
 
+
+  
 // menu burger
   function toggleMenu () {  
     const navbar = document.querySelector('.main-navigation')
