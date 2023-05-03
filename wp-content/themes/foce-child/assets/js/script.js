@@ -4,22 +4,21 @@ const bigCloud = document.getElementById("big_cloud")
 const littleCloud = document.getElementById("little_cloud")
 
 window.addEventListener('scroll', () => {
-    let decalage = window.scrollY /10
-        bigCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)';
+  const decalage = window.scrollY
+    let decalageCloud = decalage /10
+      bigCloud.style.transform = 'translateX(' + (decalageCloud + -300) + 'px)';
+
+    let decalageLittleCloud = decalage /10
+      littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
+
+    // parallaxe : logo descend avec le scoll
+  const logo = document.querySelector('.banner_img')
+
+    let decalageLogo = decalage * 5
+        logo.style.transform = 'translateY(' + (decalageLogo + -50) + 'px)';
+
 })
 
-window.addEventListener('scroll', () => {
-    let decalage = window.scrollY /10
-    littleCloud.style.transform = 'translateX(' + (decalage + -300) + 'px)'
-})
-
-// parallaxe : logo descend avec le scoll
-const titre = document.querySelector('.banner_img')
-
-window.addEventListener('scroll', () => {
-  let decalage = window.scrollY /10
-      titre.style.transform = 'translateY(' + (decalage + -500) + 'px)';
-})
 
 
 // accélération des fleurs au scroll
@@ -73,7 +72,7 @@ scrollStop(function () {
   });
 
 
-  
+
 // menu burger
   function toggleMenu () {  
     const navbar = document.querySelector('.main-navigation')
@@ -86,144 +85,38 @@ scrollStop(function () {
   toggleMenu()
 
 
-  // apparition des titres
+  // parallaxe dans la banner
+  const keyframes = `@keyframes parallaxe {
+    from { opacity: 1 }
+    to { opacity: 0 }
+  }`
 
+const sheet = new CSSStyleSheet()
+sheet.insertRule(keyframes)
+
+const parallaxe = document.querySelector('.banner_img')
+parallaxe.style.animationName = 'parallaxe'
+parallaxe.style.animationDuration = '1s';
+parallaxe.style.animationTimingFunction = 'ease'
 
 //effet d'apparition des titres
 
-//chat gpt 
-// const title = document.querySelectorAll('.title')
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add('title_visible')
+const titles = document.querySelectorAll('.title')
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('title_visible')
 
-//     } else {
-//       entry.target.classList.remove('title_visible')
-//     }
-//   })
-// })
-
-// observer.observe(title)
-
-
-// //grafikart
-// const ratio = .2
-// const options = {
-//     root : null,
-//     rootMargin: '0px',
-//     threshold: ratio
-// }
-
-// const crossing = function (entries, observer) {
-//   entries.forEach(function (entry) {
-//     if (entry.intersectionRatio > ratio) {
-//       console.log('visible')
-//       entry.target.classList.add('title_visible')
-//       observer.unobserve(entry.target)  
-//     } 
-//   })
-// }
-
-// const observer = new IntersectionObserver(crossing, options)
-// document.querySelectorAll('.title').forEach(function (r) {
-//   observer.observe(r)
-// })
-
-
-
-// Remove the transition class
-// const square = document.querySelectorAll('.title);
-// square.classList.remove('title');
-
-// // Create the observer, same as before:
-// const observer = new IntersectionObserver(entries => {
-//   entries.forEach(entry => {
-//     if (entry.isIntersecting) {
-//       square.classList.add('title_visible');
-//       return;
-//     }
-
-//     square.classList.remove('title-visible');
-//   });
-// });
-
-// observer.observe(document.querySelector('.title'));
-
-
-// const observe = new IntersectionObserver((entries) => {
-//   console.log('hey');
-//     for(const entry of entries) {
-//       if (entry.isIntersecting){
-//           entry.target.animate([
-//             {transform: 'translateY(40px)', opacity: 0},
-//             {transform: 'translateY(0px)', opacity: 1},
-//           ], {
-//               duration: 1000
-//           })
-//       }
-//     }
-// })
-
-// observer.observe(document.querySelector('.title1'))
-
-
- // // Récupère l'élément HTML correspondant au titre
-// const titre = document.querySelectorAll('.title');
-
-// // Ajoute un événement de défilement à la fenêtre du navigateur
-// window.addEventListener('scroll', () => {
-//   // Si la position verticale du scroll est supérieure à 100px
-//   if (window.scrollY > 100) {
-//     // Ajoute la classe qui fait apparaître le titre
-//     titre.classList.add('title_visible');
-//   } else {
-//     // Sinon, retire la classe pour masquer le titre
-//     titre.classList.remove('title_visible');
-//   }
-// });
-
-
-// const title = document.querySelectorAll(".title")
-
-// window.addEventListener('scroll', () => {
-//   console.log('yes');
-//     let decalage = window.scrollY /10
-//         title.style.transform = 'translateY(' + (decalage + -40) + 'px)';
-// })
-
-
-
-//  // création de l'observer
-// let observer = new IntersectionObserver(observables => {
-//   console.log(observables)
-// })
- 
-//   // récupération des titres
-//   const titles = document.querySelectorAll('title')
+    } else {
+      entry.target.classList.remove('title_visible')
+    }
     
+  })
+  
+},
+{rootMargin: "0px 0px -300px 0px"});
 
-//   for(let title of titles){
-//     title.classList.add('title_visible')
-//     // observation des titres
-//     observer.observe(title)
-  // }
-
-  document.addEventListener('DOMContentLoaded', (event) => {
- 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const titres = entry.target.querySelector("h1,h2,h3");
-    
-          if (entry.isIntersecting) {
-            titres.classList.add('toAnim');
-            return; 
-          }
-    
-          titres.classList.remove('toAnim');
-        });
-      });
-    
-      observer.observe(document.querySelector('section'));
-    });
-
+for (let i = 0; i < titles.length; i++) {
+  const title = titles[i];
+  observer.observe(title)
+}

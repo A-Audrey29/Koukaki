@@ -219,7 +219,6 @@ ul{
 
 
 
-
 /* effet d'apparission vers le haut */
  @keyframes goUp {
     from{
@@ -232,9 +231,10 @@ ul{
     }
 }
 
+/* effet d'apparission vers le bas */
 @keyframes goDown {
     from{
-        transform : translateY(-100px);
+        transform : translateY(-200px);
 		opacity: 0;
     }
     to{
@@ -243,13 +243,17 @@ ul{
     }
 }
 
-h2:before, h3, .story__article::before, .story #characters, #studio > h2, #studio > div::before {
+h2:before, h3, .story__article::before, .story #characters, .place_background, #big_cloud, #little_cloud,  #studio > h2, #studio > div::before {
 	animation: goUp 2s ease-in-out;
 }
 
- #big_cloud, #little_cloud, .main-navigation.toggled ul  {    
-    animation: goDown 2s;
+.place_p {
+    animation: 2s linear 0s 1 normal none paused;
 }
+
+ /* #big_cloud, #little_cloud, .main-navigation.toggled ul  {    
+    animation: goDown 2s;
+} */
 
 
 /*rotation des fleures*/
@@ -305,26 +309,27 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
 
 
 
-/* effet d'apparition des titres*/ 
+/* effet d'apparition des titres */ 
 
-/* styles pour les titres H2 sans pseudo-éléments */
-h2:not(:before):not(:after) {
-    opacity : 0
-    
-  }
-
-.title1 {
-    opacity:0;
-    position: relative;
-    top: 100px;
-}
-
-/* h2, h3{
-    opacity: 1;
-} */
 .title_visible {
+    opacity: 1;
     transform: translateY(Opx);
 } 
+
+.title {
+    transition: transform 1s, opacity 0.5s;
+}
+
+.title:not(.title_visible){
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* effet de parallaxe dans la banner */
+.banner_img_js {
+    transform: translateY(50%);
+}
+
 
 /* suite du flux */
 .banner{

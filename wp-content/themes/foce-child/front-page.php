@@ -58,7 +58,7 @@ get_header();
         <article id="place" class="place_background">
             <div>
                 <h3 class="title">Le Lieu</h3>
-                <p><?php echo get_theme_mod('place'); ?></p>
+                <p class="place_p"><?php echo get_theme_mod('place'); ?></p>
             </div>
             <img id="big_cloud" src="wp-content/themes/foce-child/assets/images/big_cloud.png" alt="#" />
             <img id="little_cloud" src="wp-content/themes/foce-child/assets/images/little_cloud.png" alt="#" />
