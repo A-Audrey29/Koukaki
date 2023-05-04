@@ -11,12 +11,15 @@ window.addEventListener('scroll', () => {
     let decalageLittleCloud = decalage /10
       littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
 
-    // parallaxe : logo descend avec le scoll
+    // parallaxe : logo descend avec le scoll - ne fonctionne pas avec le css car flex box empeche de décentrer
   const logo = document.querySelector('.banner_img')
+        window.scrollY.logo.style.transform = 'scale(2)'
 
-    let decalageLogo = decalage * 5
-        logo.style.transform = 'translateY(' + (decalageLogo + -50) + 'px)';
+  // const parallaxeLogo = document.querySelector('.banner_img') // sélectionnez l'élément HTML
+  // parallaxeLogo.classList.add('.goDown')
 
+
+  // document.querySelector('banner_img').classList.add('goDown')
 })
 
 
@@ -31,28 +34,28 @@ window.addEventListener('scroll', () => {
 function scrollStop (callback, refresh = 66) {
 
 	// Make sure a valid callback was provided
-	if (!callback || typeof callback !== 'function') return;
+	if (!callback || typeof callback !== 'function') return
 
 	// Setup scrolling variable
-	let isScrolling;
+	let isScrolling
 
 	// Listen for scroll events
 	window.addEventListener('scroll', function (event) {
-        document.documentElement.style.setProperty('--rotationSpeed', 2);
+        document.documentElement.style.setProperty('--rotationSpeed', 2)
 
 		// Clear our timeout throughout the scroll
-		window.clearTimeout(isScrolling);
+		window.clearTimeout(isScrolling)
 
 		// Set a timeout to run after scrolling ends
-		isScrolling = setTimeout(callback, refresh);
+		isScrolling = setTimeout(callback, refresh)
 
 	}, false);
 
 }
 
 scrollStop(function () {
-    document.documentElement.style.setProperty('--rotationSpeed', 12);
-});
+    document.documentElement.style.setProperty('--rotationSpeed', 12)
+})
 
 
 
@@ -84,23 +87,39 @@ scrollStop(function () {
   }
   toggleMenu()
 
-
   // parallaxe dans la banner
-  const keyframes = `@keyframes parallaxe {
-    from { opacity: 1 }
-    to { opacity: 0 }
-  }`
+  //   const keyframes = `@keyframes parallaxe {
+  //     from { transform: scale}
+  //     to { transition: transform }
+  //   }`
 
-const sheet = new CSSStyleSheet()
-sheet.insertRule(keyframes)
+  // const sheet = new CSSStyleSheet()
+  //    sheet.insertRule(keyframes)
 
-const parallaxe = document.querySelector('.banner_img')
-parallaxe.style.animationName = 'parallaxe'
-parallaxe.style.animationDuration = '1s';
-parallaxe.style.animationTimingFunction = 'ease'
+  // const parallaxeLogo = document.querySelector('.banner_img')
+  //     parallaxeLogo.style.animationName = 'parallaxe'
+  //     parallaxeLogo.style.animationDelay = '1s';
+  //     parallaxeLogo.style.animationTimingFunction = 'ease-in-out'
+
+
+
+// // Récupération de l'élément à animer
+// const parallaxeLogo = document.querySelector('.banner_img');
+
+// // Fonction pour animer l'élément en fonction du scroll
+// function parallaxScroll() {
+//   // Calcul de la distance parcourue par le scroll
+//   const distance = window.scrollY
+
+//   // Modification de la propriété transform de l'élément en fonction de la distance
+//   parallaxeLogo.style.transform = `perspective(${distance * 150}px), rotateX(${distance * 75}deg)`
+// }
+
+// // Écoute de l'événement scroll pour déclencher l'animation
+// window.addEventListener('scroll', parallaxScroll);
+
 
 //effet d'apparition des titres
-
 const titles = document.querySelectorAll('.title')
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

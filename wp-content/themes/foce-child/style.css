@@ -248,12 +248,12 @@ h2:before, h3, .story__article::before, .story #characters, .place_background, #
 }
 
 .place_p {
-    animation: 2s linear 0s 1 normal none paused;
+   
 }
 
- /* #big_cloud, #little_cloud, .main-navigation.toggled ul  {    
-    animation: goDown 2s;
-} */
+ .banner_img, .main-navigation.toggled ul  {   
+    animation: goDown 2s ease-in-out ;
+}
 
 
 /*rotation des fleures*/
@@ -325,10 +325,20 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
     transform: translateY(50px);
 }
 
-/* effet de parallaxe dans la banner */
-.banner_img_js {
-    transform: translateY(50%);
+/* ajustement de la fleur section story*/
+h2::after, h2::before  {
+    transform: 1s paused);
 }
+
+
+/* effet de parallaxe dans la banner */
+/* .parallax {
+    transform: perspective(150px), rotateX(75deg);
+} */
+
+/* .logo_parallax {
+    transform: scale(2)
+} */
 
 
 /* suite du flux */
@@ -350,6 +360,18 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
     position: relative;
     z-index: -1;
 }
+
+/* paquerette se centre à l'animation dû au flexbox */
+
+/* .story h2{
+    display: flex;
+    justify-content: flex-start !important;
+}
+
+.story__article {
+    display:block;
+    margin: auto;
+} */
 
 /* characterrs - carrousel */
 .swiper {
