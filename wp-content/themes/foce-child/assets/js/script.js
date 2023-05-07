@@ -11,15 +11,32 @@ window.addEventListener('scroll', () => {
     let decalageLittleCloud = decalage /10
       littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
 
-    // parallaxe : logo descend avec le scoll - ne fonctionne pas avec le css car flex box empeche de décentrer
-  const logo = document.querySelector('.banner_img')
-        window.scrollY.logo.style.transform = 'scale(2)'
+  //   // parallaxe : logo descend avec le scoll - ne fonctionne pas avec le css car flex box empeche de décentrer
+  // const logo = document.querySelector('.banner_img')
+  //       window.scrollY.logo.style.transform = 'scale(2)'
 
-  // const parallaxeLogo = document.querySelector('.banner_img') // sélectionnez l'élément HTML
-  // parallaxeLogo.classList.add('.goDown')
+  // // const parallaxeLogo = document.querySelector('.banner_img') // sélectionnez l'élément HTML
+  // // parallaxeLogo.classList.add('.goDown')
 
 
   // document.querySelector('banner_img').classList.add('goDown')
+
+  // Récupération de l'élément à animer
+const parallaxeLogo = document.querySelector('.banner_img');
+
+// Fonction pour animer l'élément en fonction du scroll
+function parallaxScroll() {
+  // Calcul de la distance parcourue par le scroll
+  const distance = window.scrollY
+
+  // Modification de la propriété transform de l'élément en fonction de la distance
+  // parallaxeLogo.style.transform = `perspective(150px), rotateX(${distance * 75}deg)`
+  parallaxeLogo.style.transform = `perspective(150px) . rotateX(\${distance 75}deg)`
+}
+
+// Écoute de l'événement scroll pour déclencher l'animation
+window.addEventListener('scroll', parallaxScroll);
+console.log(parallaxScroll);
 })
 
 
@@ -120,7 +137,7 @@ scrollStop(function () {
 
 
 //effet d'apparition des titres
-const titles = document.querySelectorAll('.title')
+const titles = document.getElementsByTagName('span')
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

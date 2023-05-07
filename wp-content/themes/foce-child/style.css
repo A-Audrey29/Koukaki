@@ -243,15 +243,11 @@ ul{
     }
 }
 
-h2:before, h3, .story__article::before, .story #characters, .place_background, #big_cloud, #little_cloud,  #studio > h2, #studio > div::before {
+h2:before, span, h3, .story__article::before, .story #characters, .place_background, #big_cloud, #little_cloud,  #studio > h2, #studio > div::before {
 	animation: goUp 2s ease-in-out;
 }
 
-.place_p {
-   
-}
-
- .banner_img, .main-navigation.toggled ul  {   
+ .main-navigation.toggled ul  {   
     animation: goDown 2s ease-in-out ;
 }
 
@@ -305,29 +301,24 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
   /* logo : apparition puis effet de flottement*/
   .banner img {
     animation: float 3s ease-in-out infinite, goUp 2s;
+    /* transform: translate(0); */
   }
 
 
 
 /* effet d'apparition des titres */ 
-
 .title_visible {
     opacity: 1;
-    transform: translateY(Opx);
-} 
-
-.title {
-    transition: transform 1s, opacity 0.5s;
+    transform: translateY(0);
 }
 
-.title:not(.title_visible){
+span {
+    transition: transform 1s, opacity 0.5s, translateY 1s;
+}
+
+span:not(.title_visible){
     opacity: 0;
     transform: translateY(50px);
-}
-
-/* ajustement de la fleur section story*/
-h2::after, h2::before  {
-    transform: 1s paused);
 }
 
 
@@ -362,6 +353,9 @@ h2::after, h2::before  {
 }
 
 /* paquerette se centre à l'animation dû au flexbox */
+
+
+
 
 /* .story h2{
     display: flex;

@@ -10,7 +10,7 @@ get_header();
         <img class="banner_img" src="<?php echo get_template_directory_uri() . "'/assets/images/logo.png'"; ?> " alt="logo Fleurs d'oranger & chats errants">
     </section>
     <section id="story" class="story object-speed-up">
-        <h2 class="title">L'histoire</h2>
+        <h2><span>L'histoire</span></h2>
         <article id="" class="story__article object-speed-up ">
             <p#><?php echo get_theme_mod('story'); ?></p>
         </article>
@@ -27,7 +27,7 @@ get_header();
 
         <article id="characters">
             <div class="main-character">
-                <h3 class="title">Les personnages</h3>
+                <h3><span>Les personnages</span></h3>
 
                 <!-- ajout du slider templates-parts -->
                 <?php get_template_part('template-parts/content', 'slider'); ?>
@@ -57,8 +57,8 @@ get_header();
         </article>
         <article id="place" class="place_background">
             <div>
-                <h3 class="title">Le Lieu</h3>
-                <p class="place_"><?php echo get_theme_mod('place'); ?></p>
+                <h3><span>Le Lieu</span></h3>
+                <p class="place_p"><?php echo get_theme_mod('place'); ?></p>
             </div>
             <img id="big_cloud" src="wp-content/themes/foce-child/assets/images/big_cloud.png" alt="#" />
             <img id="little_cloud" src="wp-content/themes/foce-child/assets/images/little_cloud.png" alt="#" />
@@ -67,7 +67,7 @@ get_header();
 
 
     <section id="studio">
-        <h2 class="title">Studio Koukaki</h2>
+        <h2><span>Studio Koukaki</span></h2>
         <div>
             <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
             <p>Avec une créativité et une capacité d’innovation mondialement reconnues, une expertise éditoriale et commerciale à la pointe de son industrie, le Studio Koukaki se positionne comme un acteur incontournable dans un marché en forte croissance. Koukaki construit chaque année de véritables succès et capitalise sur de puissantes marques historiques. Cette année, il vous présente “Fleurs d’oranger et chats errants”.</p>
