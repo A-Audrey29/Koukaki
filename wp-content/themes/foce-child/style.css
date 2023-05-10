@@ -312,14 +312,17 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
     transform: translateY(0);
 }
 
-span {
-    transition: transform 1s, opacity 0.5s, translateY 1s;
+h2 span, h3 span {  
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: transform 1s, opacity 0.5s;
 }
 
-span:not(.title_visible){
+/* span:not(.title_visible){
     opacity: 0;
     transform: translateY(50px);
-}
+} */
 
 
 /* effet de parallaxe dans la banner */
