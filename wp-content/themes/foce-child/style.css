@@ -42,6 +42,11 @@ ul{
    
   }
 
+#site-navigation  {
+    position: fixed;
+    max-width: 1440px;
+}
+
 .main-navigation {
     display: flex;
     flex-direction: column;
@@ -243,14 +248,37 @@ ul{
     }
 }
 
-h2:before, span, h3, .story__article::before, .story #characters, .place_background, #big_cloud, #little_cloud,  #studio > h2, #studio > div::before {
+story h2, h2:before, span, h3, .story__article::before, .story #characters, #big_cloud, #little_cloud,  #studio > h2, #studio > div::before {
 	animation: goUp 2s ease-in-out;
 }
+
 
  .main-navigation.toggled ul  {   
     animation: goDown 2s ease-in-out ;
 }
 
+/* animer le background de story h2 */
+
+@keyframes goUp_background {
+    from{
+        background-position : 0 300px;
+		opacity: 0;
+    }
+    to{
+        background-position: 0 0;
+		opacity: 1;
+    }
+}
+
+h2 {
+    background-image: url('../foce/assets/images/purple_title_bg.png');
+    animation: goUp_background 2s;
+  }
+/* animer le background de #place*/
+  .story #place {
+    background-repeat: no-repeat;
+    animation: goUp_background 2s;
+  }
 
 /*rotation des fleures*/
 @keyframes rotateFlowers {
@@ -315,14 +343,30 @@ h2::after, .story__article::after, .studio_orchid, .site-footer ul::after, .stud
 h2 span, h3 span {  
     display: inline-block;
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(100px);
     transition: transform 1s, opacity 0.5s;
 }
 
-/* span:not(.title_visible){
-    opacity: 0;
-    transform: translateY(50px);
+/* parallaxe dans la bannière */ 
+
+.banner_img {
+    transform: scale(1);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .banner_img.animate {
+    transform: scale(0.5);
+  }
+
+/* .logo_parallax {
+    top: 500px;
 } */
+  
+  /* .video_parallax {
+    position: relative;
+    z-index: 0;
+  } */
+
 
 
 /* effet de parallaxe dans la banner */

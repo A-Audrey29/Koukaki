@@ -30,9 +30,9 @@
             <header id="masthead" class="site-header">
                 <nav id="site-navigation" class="main-navigation navbar">
                     <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                        <span class="line line_one"></span>
-                        <span class="line line_two"></span>
-                        <span class="line line_three"></span>
+                        <div class="line line_one"></div>
+                        <div class="line line_two"></div>
+                        <div class="line line_three"></div>
                     </button>
                     <li class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></li>
                     <ul class="open_nav navbar-links">

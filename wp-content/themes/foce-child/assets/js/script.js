@@ -3,6 +3,7 @@
 const bigCloud = document.getElementById("big_cloud")
 const littleCloud = document.getElementById("little_cloud")
 
+
 window.addEventListener('scroll', () => {
   const decalage = window.scrollY
     let decalageCloud = decalage /10
@@ -11,8 +12,39 @@ window.addEventListener('scroll', () => {
     let decalageLittleCloud = decalage /10
       littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
 
-  //   // parallaxe : logo descend avec le scoll - ne fonctionne pas avec le css car flex box empeche de décentrer
-  // const logo = document.querySelector('.banner_img')
+const logo = document.querySelector('.banner_img');
+      let decalageLogo = decalage /10
+       logo.style.top.transform = 'translateY(' + (decalageLogo + -300) + 'px)'
+       console.log(logo);
+    })
+  //   // parallaxe logo 
+
+  
+// // Sélectionner l'élément à animer
+// const element = document.querySelector('.banner_im');
+
+// // Définir le moment où l'animation doit être déclenchée
+// const triggerOffset = window.innerHeight * 0.8;
+
+// // Fonction qui sera exécutée lorsque l'utilisateur fait défiler la page
+// function checkScroll() {
+//   const currentScroll = window.pageYOffset;
+//   const elementTop = element.offsetTop;
+
+//   // Ajouter la classe 'animate' lorsque l'utilisateur atteint le point de déclenchement
+//   if (currentScroll + triggerOffset > elementTop) {
+//     element.classList.add('animate');
+//   }
+// }
+
+// // Écouter l'événement 'scroll'
+// window.addEventListener('scroll', checkScroll);
+
+    // const logo = document.querySelector('.banner_img')
+    //   logo.classList.add('logo_parallax')
+    //  let decalageLogo = decalage /10
+    //    logo.style.top.transform = 'translateY(' + (decalageLogo + -300) + 'px)'
+
   //       window.scrollY.logo.style.transform = 'scale(2)'
 
   // // const parallaxeLogo = document.querySelector('.banner_img') // sélectionnez l'élément HTML
@@ -22,22 +54,44 @@ window.addEventListener('scroll', () => {
   // document.querySelector('banner_img').classList.add('goDown')
 
   // Récupération de l'élément à animer
-const parallaxeLogo = document.querySelector('.banner_img');
+// const parallaxeLogo = document.querySelector('.banner_img');
 
-// Fonction pour animer l'élément en fonction du scroll
-function parallaxScroll() {
-  // Calcul de la distance parcourue par le scroll
-  const distance = window.scrollY
+// // Fonction pour animer l'élément en fonction du scroll
+// function parallaxScroll() {
+//   // Calcul de la distance parcourue par le scroll
+//   const distance = window.scrollY
 
-  // Modification de la propriété transform de l'élément en fonction de la distance
-  // parallaxeLogo.style.transform = `perspective(150px), rotateX(${distance * 75}deg)`
-  parallaxeLogo.style.transform = `perspective(150px) . rotateX(\${distance 75}deg)`
+//   // Modification de la propriété transform de l'élément en fonction de la distance
+//   // parallaxeLogo.style.transform = `perspective(150px), rotateX(${distance * 75}deg)`
+//   parallaxeLogo.style.transform = `perspective(150px) . rotateX(\${distance 75}deg)`
+// }
+
+// // Écoute de l'événement scroll pour déclencher l'animation
+// window.addEventListener('scroll', parallaxScroll);
+// console.log(parallaxScroll);
+// })
+
+
+//effet d'apparition des titres
+const titles = document.getElementsByTagName('span')
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('title_visible')
+
+    } else {
+      entry.target.classList.remove('title_visible')
+    }
+    
+  })
+  
+},
+{rootMargin: "0px 0px -150px 0px"});
+
+for (let i = 0; i < titles.length; i++) {
+  const title = titles[i];
+  observer.observe(title)
 }
-
-// Écoute de l'événement scroll pour déclencher l'animation
-window.addEventListener('scroll', parallaxScroll);
-console.log(parallaxScroll);
-})
 
 
 
@@ -89,7 +143,7 @@ scrollStop(function () {
       modifier: 1,
       slideShadows: true,
     },
-  });
+  })
 
 
 
@@ -135,24 +189,11 @@ scrollStop(function () {
 // // Écoute de l'événement scroll pour déclencher l'animation
 // window.addEventListener('scroll', parallaxScroll);
 
+// const parallaxScroll = () => {
+//   const distance = window.pageYOffset;
+//   const parallaxeLogo = document.querySelector('.logo_parallax');
+//   parallaxeLogo.style.transform = `perspective(150px) rotateX(${distance * 75}deg)`;
+// };
 
-//effet d'apparition des titres
-const titles = document.getElementsByTagName('span')
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('title_visible')
+// window.addEventListener('scroll', parallaxScroll);
 
-    } else {
-      entry.target.classList.remove('title_visible')
-    }
-    
-  })
-  
-},
-{rootMargin: "0px 0px -300px 0px"});
-
-for (let i = 0; i < titles.length; i++) {
-  const title = titles[i];
-  observer.observe(title)
-}
