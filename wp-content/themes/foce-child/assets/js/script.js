@@ -1,89 +1,48 @@
 
-// décalage des nuages aux sroll
+
 const bigCloud = document.getElementById("big_cloud")
 const littleCloud = document.getElementById("little_cloud")
+const bannerImg = document.querySelector('.banner_img');
+let previousScrollPosition = window.pageYOffset;
+const backgroundVideo = document.querySelector('.background-video');
+const scrollRatio = 0.5; // vous devez définir une valeur pour la variable imageOrigine
 
-
+  // décalage des nuages aux sroll  
 window.addEventListener('scroll', () => {
   const decalage = window.scrollY
-    let decalageCloud = decalage /10
-      bigCloud.style.transform = 'translateX(' + (decalageCloud + -300) + 'px)';
+  let decalageCloud = decalage /10
+  bigCloud.style.transform = 'translateX(' + (decalageCloud + -300) + 'px)';
 
-    let decalageLittleCloud = decalage /10
-      littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
+  let decalageLittleCloud = decalage /10
+  littleCloud.style.transform = 'translateX(' + (decalageLittleCloud + -300) + 'px)'
+    
+  // parallaxe du logo 
 
-const logo = document.querySelector('.banner_img');
-      let decalageLogo = decalage /10
-       logo.style.top.transform = 'translateY(' + (decalageLogo + -300) + 'px)'
-       console.log(logo);
-    })
-  //   // parallaxe logo 
-
+  const currentScrollPosition = window.pageYOffset;
+  const scrollDirection = currentScrollPosition > previousScrollPosition ? 'up' : 'down';
   
-// // Sélectionner l'élément à animer
-// const element = document.querySelector('.banner_im');
+  const scrollTop = window.pageYOffset;
+  const bannerImgOffset = scrollTop * scrollRatio;
+  const backgroundVideoOffset = scrollTop * (1 - scrollRatio);
 
-// // Définir le moment où l'animation doit être déclenchée
-// const triggerOffset = window.innerHeight * 0.8;
-
-// // Fonction qui sera exécutée lorsque l'utilisateur fait défiler la page
-// function checkScroll() {
-//   const currentScroll = window.pageYOffset;
-//   const elementTop = element.offsetTop;
-
-//   // Ajouter la classe 'animate' lorsque l'utilisateur atteint le point de déclenchement
-//   if (currentScroll + triggerOffset > elementTop) {
-//     element.classList.add('animate');
-//   }
-// }
-
-// // Écouter l'événement 'scroll'
-// window.addEventListener('scroll', checkScroll);
-
-    // const logo = document.querySelector('.banner_img')
-    //   logo.classList.add('logo_parallax')
-    //  let decalageLogo = decalage /10
-    //    logo.style.top.transform = 'translateY(' + (decalageLogo + -300) + 'px)'
-
-  //       window.scrollY.logo.style.transform = 'scale(2)'
-
-  // // const parallaxeLogo = document.querySelector('.banner_img') // sélectionnez l'élément HTML
-  // // parallaxeLogo.classList.add('.goDown')
-
-
-  // document.querySelector('banner_img').classList.add('goDown')
-
-  // Récupération de l'élément à animer
-// const parallaxeLogo = document.querySelector('.banner_img');
-
-// // Fonction pour animer l'élément en fonction du scroll
-// function parallaxScroll() {
-//   // Calcul de la distance parcourue par le scroll
-//   const distance = window.scrollY
-
-//   // Modification de la propriété transform de l'élément en fonction de la distance
-//   // parallaxeLogo.style.transform = `perspective(150px), rotateX(${distance * 75}deg)`
-//   parallaxeLogo.style.transform = `perspective(150px) . rotateX(\${distance 75}deg)`
-// }
-
-// // Écoute de l'événement scroll pour déclencher l'animation
-// window.addEventListener('scroll', parallaxScroll);
-// console.log(parallaxScroll);
-// })
+  bannerImg.style.transform = `translateY(${bannerImgOffset}px)`;
+  backgroundVideo.style.transform = `translateY(${backgroundVideoOffset}px)`;
+  
+})
 
 
 //effet d'apparition des titres
-const titles = document.getElementsByTagName('span')
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('title_visible')
+  const titles = document.getElementsByTagName('span')
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('title_visible')
 
-    } else {
-      entry.target.classList.remove('title_visible')
-    }
-    
-  })
+      } else {
+        entry.target.classList.remove('title_visible')
+      }
+      
+})
   
 },
 {rootMargin: "0px 0px -150px 0px"});
@@ -157,43 +116,3 @@ scrollStop(function () {
     })
   }
   toggleMenu()
-
-  // parallaxe dans la banner
-  //   const keyframes = `@keyframes parallaxe {
-  //     from { transform: scale}
-  //     to { transition: transform }
-  //   }`
-
-  // const sheet = new CSSStyleSheet()
-  //    sheet.insertRule(keyframes)
-
-  // const parallaxeLogo = document.querySelector('.banner_img')
-  //     parallaxeLogo.style.animationName = 'parallaxe'
-  //     parallaxeLogo.style.animationDelay = '1s';
-  //     parallaxeLogo.style.animationTimingFunction = 'ease-in-out'
-
-
-
-// // Récupération de l'élément à animer
-// const parallaxeLogo = document.querySelector('.banner_img');
-
-// // Fonction pour animer l'élément en fonction du scroll
-// function parallaxScroll() {
-//   // Calcul de la distance parcourue par le scroll
-//   const distance = window.scrollY
-
-//   // Modification de la propriété transform de l'élément en fonction de la distance
-//   parallaxeLogo.style.transform = `perspective(${distance * 150}px), rotateX(${distance * 75}deg)`
-// }
-
-// // Écoute de l'événement scroll pour déclencher l'animation
-// window.addEventListener('scroll', parallaxScroll);
-
-// const parallaxScroll = () => {
-//   const distance = window.pageYOffset;
-//   const parallaxeLogo = document.querySelector('.logo_parallax');
-//   parallaxeLogo.style.transform = `perspective(150px) rotateX(${distance * 75}deg)`;
-// };
-
-// window.addEventListener('scroll', parallaxScroll);
-
